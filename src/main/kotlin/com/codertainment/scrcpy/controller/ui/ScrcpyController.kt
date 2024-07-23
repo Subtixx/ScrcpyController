@@ -4,6 +4,7 @@ import com.codertainment.scrcpy.controller.model.*
 import com.codertainment.scrcpy.controller.util.*
 import com.intellij.ide.BrowserUtil
 import com.intellij.notification.NotificationType
+import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.options.ShowSettingsUtil
 import com.intellij.openapi.ui.TextBrowseFolderListener
@@ -228,7 +229,7 @@ internal class ScrcpyController(private val toolWindow: ToolWindow) : DeviceDete
       try {
         deviceWatcher?.stop()
       } catch (e: Exception) {
-        e.printStackTrace()
+        Logger.getInstance(ScrcpyController::class.java).debug("${e.message}")
       }
     }.start()
   }
