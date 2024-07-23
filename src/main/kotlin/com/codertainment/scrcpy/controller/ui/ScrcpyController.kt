@@ -239,14 +239,14 @@ internal class ScrcpyController(private val toolWindow: ToolWindow) : DeviceDete
     maxFps.bindNumber(60, ScrcpyProps::maxFps)
     bitRate.bindNumber(10_000, ScrcpyProps::bitRate)
 
-    bitRateUnit?.selectedIndex = BitRateUnit.values().indexOf(props.bitRateUnit)
+    bitRateUnit?.selectedIndex = BitRateUnit.entries.indexOf(props.bitRateUnit)
     bitRateUnit?.addActionListener {
-      props.bitRateUnit = BitRateUnit.values()[bitRateUnit?.selectedIndex ?: 0]
+      props.bitRateUnit = BitRateUnit.entries.toTypedArray()[bitRateUnit?.selectedIndex ?: 0]
     }
 
-    videoOrientation?.selectedIndex = VideoOrientation.values().indexOf(props.videoOrientation)
+    videoOrientation?.selectedIndex = VideoOrientation.entries.indexOf(props.videoOrientation)
     videoOrientation?.addActionListener {
-      props.videoOrientation = VideoOrientation.values()[videoOrientation?.selectedIndex ?: 0]
+      props.videoOrientation = VideoOrientation.entries.toTypedArray()[videoOrientation?.selectedIndex ?: 0]
     }
 
     displayBufferEnabled.bind(ScrcpyProps::displayBufferEnabled)
@@ -270,9 +270,9 @@ internal class ScrcpyController(private val toolWindow: ToolWindow) : DeviceDete
     disableMirroring.bind(ScrcpyProps::disableMirroring)
     fileName.bindString(ScrcpyProps::recordingFileName)
 
-    fileExtension?.selectedIndex = RecordingExtension.values().indexOf(props.recordingFileExtension)
+    fileExtension?.selectedIndex = RecordingExtension.entries.indexOf(props.recordingFileExtension)
     fileExtension?.addActionListener {
-      props.recordingFileExtension = RecordingExtension.values()[fileExtension?.selectedIndex ?: 0]
+      props.recordingFileExtension = RecordingExtension.entries.toTypedArray()[fileExtension?.selectedIndex ?: 0]
     }
 
     folder?.textField?.bindString(ScrcpyProps::recordingPath)
@@ -289,9 +289,9 @@ internal class ScrcpyController(private val toolWindow: ToolWindow) : DeviceDete
   private fun initWindowFields() {
     windowTitle.bindString(ScrcpyProps::windowTitle)
 
-    rotation?.selectedIndex = Rotation.values().indexOf(props.rotation)
+    rotation?.selectedIndex = Rotation.entries.indexOf(props.rotation)
     rotation?.addActionListener {
-      props.rotation = Rotation.values()[rotation?.selectedIndex ?: 0]
+      props.rotation = Rotation.entries.toTypedArray()[rotation?.selectedIndex ?: 0]
     }
     borderless.bind(ScrcpyProps::borderless)
     alwaysOnTop.bind(ScrcpyProps::alwaysOnTop)
