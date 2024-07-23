@@ -2,6 +2,11 @@
   <id>com.codertainment.scrcpy</id>
   <name>scrcpy</name>
   <vendor email="shripal17@gmail.com" url="https://github.com/shripal17">Codertainment</vendor>
+  <idea-version since-build="241"/>
+
+  <!--suppress PluginXmlValidity -->
+  <description>REPLACED_BY_GRADLE</description>
+  <version>REPLACED_BY_GRADLE</version>
 
   <description><![CDATA[
     Provides options for running scrcpy directly from IntelliJ IDEA/Android Studio
@@ -21,5 +26,4 @@
       parentId="tools"/>
     <notificationGroup id="scrcpy" displayType="BALLOON"/>
   </extensions>
-  <idea-version since-build="203.6682.168"/>
 </idea-plugin>
