@@ -278,6 +278,7 @@ internal class ScrcpyController(private val toolWindow: ToolWindow) : DeviceDete
     folder?.textField?.bindString(ScrcpyProps::recordingPath)
     folder?.addBrowseFolderListener(object :
       TextBrowseFolderListener(FileChooserDescriptor(false, true, false, false, false, false)) {
+      @Suppress("UnstableApiUsage")
       override fun getInitialFile(): VirtualFile? {
         return if (props.recordingPath == null) null else LocalFileSystem.getInstance()
           .findFileByIoFile(File(props.recordingPath ?: ""))
